@@ -1,0 +1,2996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebWise Solutions | Digital Transformation Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a90e2;
+            --accent: #00bcd4;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f5f5f7;
+            --gray: #8a8a9d;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--primary));
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        body.dark-mode {
+            background-color: var(--darker);
+            color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .dark-mode p {
+            color: #b8b8c5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .dark-mode header {
+            background: rgba(26, 26, 46, 0.95);
+        }
+
+        header.sticky {
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .dark-mode .logo {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .dark-mode nav ul li a {
+            color: var(--light);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-right: 20px;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .dark-mode .theme-toggle {
+            color: var(--light);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .dark-mode .mobile-menu-btn {
+            color: var(--light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            background: var(--gradient-secondary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark-mode .hero {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+
+        .dark-mode .services {
+            background-color: var(--dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .dark-mode .service-card {
+            background: var(--darker);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg);
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .service-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .service-link:hover:after {
+            width: 100%;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #f9f9ff;
+        }
+
+        .dark-mode .about {
+            background-color: #1a1a2e;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: var(--light);
+        }
+
+        .dark-mode .process {
+            background-color: var(--dark);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .step-icon {
+            background: var(--darker);
+        }
+
+        .step:hover .step-icon {
+            background: var(--gradient);
+            color: white;
+            transform: rotate(15deg);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: #f9f9ff;
+        }
+
+        .dark-mode .portfolio {
+            background-color: #1a1a2e;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+            filter: grayscale(100%);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--light);
+        }
+
+        .dark-mode .pricing {
+            background-color: var(--dark);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .dark-mode .pricing-card {
+            background: var(--darker);
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dark-mode .pricing-features li {
+            border-bottom: 1px solid #333;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f9f9ff;
+        }
+
+        .dark-mode .testimonials {
+            background-color: #1a1a2e;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .dark-mode .testimonial-card {
+            background: var(--darker);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+        }
+
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin: 10px 0;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+        }
+
+        /* Blog Section */
+        .blog {
+            background-color: var(--light);
+        }
+
+        .dark-mode .blog {
+            background-color: var(--dark);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .dark-mode .blog-card {
+            background: var(--darker);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .read-more:after {
+            content: '→';
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover:after {
+            margin-left: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-secondary);
+            color: white;
+        }
+
+        .dark-mode .contact {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text h2 {
+            text-align: left;
+        }
+
+        .contact-form {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: white;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .dark-mode footer {
+            background: var(--darker);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #b8b8c5;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b8b8c5;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .chat-widget:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .dark-mode .chat-box {
+            background: var(--darker);
+            color: var(--light);
+        }
+
+        .chat-box.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .chat-header {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .chat-message.bot {
+            justify-content: flex-start;
+        }
+
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .bot .message-bubble {
+            background: #f0f0f0;
+            border-bottom-left-radius: 5px;
+        }
+
+        .dark-mode .bot .message-bubble {
+            background: #333;
+        }
+
+        .user .message-bubble {
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+
+        .dark-mode .chat-footer {
+            border-top: 1px solid #333;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+        }
+
+        .dark-mode .chat-input {
+            background: var(--dark);
+            border-color: #444;
+            color: var(--light);
+        }
+
+        .send-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .send-btn:hover {
+            background: var(--accent);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+
+        .dark-mode .mobile-nav {
+            background: var(--darker);
+        }
+
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav ul li {
+            margin: 20px 0;
+        }
+
+        .mobile-nav ul li a {
+            font-size: 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .dark-mode .mobile-nav ul li a {
+            color: var(--light);
+        }
+
+        .mobile-nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .close-mobile-nav {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .dark-mode .close-mobile-nav {
+            color: var(--light);
+        }
+
+        /* Page Content Styles */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page-hero {
+            padding: 150px 0 80px;
+            background: var(--gradient-secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .dark-mode .page-hero {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .breadcrumb li {
+            margin: 0 10px;
+        }
+
+        .breadcrumb li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb li a:hover {
+            color: white;
+        }
+
+        .breadcrumb li:after {
+            content: '/';
+            margin-left: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .breadcrumb li:last-child:after {
+            content: '';
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--light);
+        }
+
+        .dark-mode .team {
+            background-color: var(--dark);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .dark-mode .team-member {
+            background: var(--darker);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Service Detail Page */
+        .service-detail {
+            background-color: var(--light);
+        }
+
+        .dark-mode .service-detail {
+            background-color: var(--dark);
+        }
+
+        .service-detail-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .service-detail-text {
+            flex: 2;
+        }
+
+        .service-detail-sidebar {
+            flex: 1;
+        }
+
+        .service-features {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .dark-mode .service-features {
+            background: var(--darker);
+        }
+
+        .service-features h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .service-features ul {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dark-mode .service-features li {
+            border-bottom: 1px solid #333;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Project Detail Page */
+        .project-detail {
+            background-color: var(--light);
+        }
+
+        .dark-mode .project-detail {
+            background-color: var(--dark);
+        }
+
+        .project-detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .project-header {
+            display: flex;
+            gap: 40px;
+        }
+
+        .project-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .meta-value {
+            font-weight: 600;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Blog Detail Page */
+        .blog-detail {
+            background-color: var(--light);
+        }
+
+        .dark-mode .blog-detail {
+            background-color: var(--dark);
+        }
+
+        .blog-detail-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .blog-article {
+            flex: 2;
+        }
+
+        .blog-sidebar {
+            flex: 1;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            color: var(--gray);
+        }
+
+        .article-image {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-content h3 {
+            margin: 30px 0 15px;
+            color: var(--primary);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .dark-mode .sidebar-widget {
+            background: var(--darker);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .widget-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .recent-posts {
+            list-style: none;
+        }
+
+        .recent-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dark-mode .recent-post {
+            border-bottom: 1px solid #333;
+        }
+
+        .recent-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .recent-post-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recent-post-content h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .recent-post-content h4 a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .dark-mode .recent-post-content h4 a {
+            color: var(--light);
+        }
+
+        .recent-post-content h4 a:hover {
+            color: var(--primary);
+        }
+
+        .recent-post-date {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .dark-mode .tag {
+            background: #333;
+            color: var(--light);
+        }
+
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content,
+            .about-content,
+            .contact-content,
+            .service-detail-content,
+            .project-header,
+            .blog-detail-content {
+                flex-direction: column;
+            }
+            
+            .hero-text,
+            .about-text,
+            .contact-text,
+            .service-detail-text,
+            .project-info,
+            .blog-article {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .chat-box {
+                width: 300px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" data-page="home">WebWise Solutions</a>
+                <nav>
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About</a></li>
+                        <li><a href="#" data-page="services">Services</a></li>
+                        <li><a href="#" data-page="projects">Projects</a></li>
+                        <li><a href="#" data-page="blog">Blog</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#" class="btn btn-primary" data-page="contact">Get a Quote</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-nav" id="closeMobileNav">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="about">About</a></li>
+            <li><a href="#" data-page="services">Services</a></li>
+            <li><a href="#" data-page="projects">Projects</a></li>
+            <li><a href="#" data-page="blog">Blog</a></li>
+            <li><a href="#" data-page="contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Transform Your Digital Presence with Smart Web Solutions</h1>
+                        <p>From web design to marketing strategy — we help your business grow online.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary" data-page="contact">Start Your Project</a>
+                            <a href="#" class="btn btn-secondary" data-page="projects">See Portfolio</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Digital Dashboard">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Design & Development</h3>
+                        <p>Custom websites and web applications built with the latest technologies.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                        <p>Improve your search engine rankings and drive more organic traffic.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Branding & Identity</h3>
+                        <p>Create a strong brand identity that resonates with your target audience.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Social Media Marketing</h3>
+                        <p>Engage your audience and grow your presence across social platforms.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Solutions</h3>
+                        <p>Build online stores that convert visitors into loyal customers.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Integration</h3>
+                        <p>Migrate and optimize your business operations in the cloud.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image fade-in">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Our Team">
+                    </div>
+                    <div class="about-text fade-in">
+                        <h2>Your Partner in Digital Excellence</h2>
+                        <p>At WebWise Solutions, we combine creative design with technical expertise to deliver digital solutions that drive real business results. With over 8 years of experience, our team has helped hundreds of businesses establish a powerful online presence.</p>
+                        <p>We believe in building long-term partnerships with our clients, providing ongoing support and strategic guidance to help them adapt and thrive in the ever-changing digital landscape.</p>
+                        <a href="#" class="btn btn-primary" data-page="about">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process">
+            <div class="container">
+                <h2>Our Process</h2>
+                <div class="process-steps">
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Research & Strategy</h3>
+                        <p>We analyze your business goals and target audience to create a winning strategy.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h3>Design & Prototype</h3>
+                        <p>Our designers create visually stunning interfaces that prioritize user experience.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Development & Testing</h3>
+                        <p>We build robust solutions using the latest technologies and rigorous testing.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Launch & Support</h3>
+                        <p>We ensure a smooth launch and provide ongoing support for your success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio">
+            <div class="container">
+                <h2>Our Projects</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="E-commerce Website">
+                        <div class="portfolio-overlay">
+                            <h3>E-commerce Platform</h3>
+                            <p>Custom online store with integrated payment system</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Corporate Website">
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Website</h3>
+                            <p>Modern responsive design for a financial services company</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile App">
+                        <div class="portfolio-overlay">
+                            <h3>Mobile Application</h3>
+                            <p>Cross-platform app for a food delivery service</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Brand Identity">
+                        <div class="portfolio-overlay">
+                            <h3>Brand Identity</h3>
+                            <p>Complete rebranding for a tech startup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing">
+            <div class="container">
+                <h2>Pricing Plans</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card fade-in">
+                        <h3>Basic</h3>
+                        <div class="price">$499<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li>5 Page Website</li>
+                            <li>Mobile Responsive Design</li>
+                            <li>Basic SEO Setup</li>
+                            <li>Contact Form</li>
+                            <li>1 Month Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-page="contact">Choose Plan</a>
+                    </div>
+                    <div class="pricing-card featured fade-in">
+                        <h3>Pro</h3>
+                        <div class="price">$999<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li>Up to 15 Pages</li>
+                            <li>Custom Design</li>
+                            <li>Advanced SEO</li>
+                            <li>E-commerce Functionality</li>
+                            <li>3 Months Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-page="contact">Choose Plan</a>
+                    </div>
+                    <div class="pricing-card fade-in">
+                        <h3>Premium</h3>
+                        <div class="price">$1999<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li>Unlimited Pages</li>
+                            <li>Premium Custom Design</li>
+                            <li>Full SEO Package</li>
+                            <li>Advanced E-commerce</li>
+                            <li>6 Months Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-page="contact">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-image">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"WebWise Solutions transformed our online presence completely. Our website traffic has increased by 200% since launching the new site!"</p>
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO, TechInnovate</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-image">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"The team at WebWise delivered our e-commerce platform ahead of schedule. The user experience is seamless and our sales have doubled."</p>
+                                <h4>Michael Chen</h4>
+                                <p>Founder, StyleHub</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-image">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Their attention to detail and creative approach set them apart. Our new brand identity has received rave reviews from customers and partners."</p>
+                                <h4>Emma Rodriguez</h4>
+                                <p>Marketing Director, GreenLife</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <div class="slider-dot active" data-slide="0"></div>
+                        <div class="slider-dot" data-slide="1"></div>
+                        <div class="slider-dot" data-slide="2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog">
+            <div class="container">
+                <h2>Latest Insights</h2>
+                <div class="blog-grid">
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                                <span><i class="far fa-user"></i> John Doe</span>
+                            </div>
+                            <h3>10 Web Design Trends for 2023</h3>
+                            <p>Discover the latest web design trends that will dominate this year and how to implement them in your projects.</p>
+                            <a href="#" class="read-more" data-page="blog">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                                <span><i class="far fa-user"></i> Jane Smith</span>
+                            </div>
+                            <h3>How to Improve Your SEO in 5 Simple Steps</h3>
+                            <p>Learn actionable strategies to boost your search engine rankings and drive more organic traffic to your website.</p>
+                            <a href="#" class="read-more" data-page="blog">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> May 10, 2023</span>
+                                <span><i class="far fa-user"></i> Alex Johnson</span>
+                            </div>
+                            <h3>The Importance of Mobile-First Design</h3>
+                            <p>With mobile traffic surpassing desktop, learn why mobile-first design is crucial for your online success.</p>
+                            <a href="#" class="read-more" data-page="blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h2>Let's Build Something Exceptional Together!</h2>
+                        <p>Ready to take your digital presence to the next level? Get in touch with our team to discuss your project.</p>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                            <p><i class="fas fa-envelope"></i> hello@webwisesolutions.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 123 Digital Street, Tech City</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>About Us</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li>About Us</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Our Team">
+                    </div>
+                    <div class="about-text">
+                        <h2>Your Partner in Digital Excellence</h2>
+                        <p>Founded in 2015 by Alexander N. Kathanzu, WebWise Solutions has grown from a small startup to a leading digital agency with a team of 25+ experts. Our mission is to empower businesses with cutting-edge digital solutions that drive growth and innovation.</p>
+                        <p>We believe in building long-term partnerships with our clients, providing ongoing support and strategic guidance to help them adapt and thrive in the ever-changing digital landscape.</p>
+                        <div class="founder-info">
+                            <h3>Alexander N. Kathanzu</h3>
+                            <p class="member-role">Founder & CEO</p>
+                            <p>With over 12 years of experience in web development and digital marketing, Alexander founded WebWise Solutions with a vision to bridge the gap between creativity and technology. His leadership has guided the company to become an award-winning agency recognized for innovation and excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="container">
+                <h2>Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Team Member">
+                        </div>
+                        <div class="member-info">
+                            <h3>Michael Chen</h3>
+                            <p class="member-role">Creative Director</p>
+                            <p>Leading our design team with 8+ years of experience in UI/UX design and brand development.</p>
+                        </div>
+                    </div>
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Team Member">
+                        </div>
+                        <div class="member-info">
+                            <h3>Sarah Johnson</h3>
+                            <p class="member-role">Lead Developer</p>
+                            <p>Full-stack developer specializing in modern web technologies and scalable solutions.</p>
+                        </div>
+                    </div>
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Team Member">
+                        </div>
+                        <div class="member-info">
+                            <h3>David Wilson</h3>
+                            <p class="member-role">SEO Specialist</p>
+                            <p>Digital marketing expert with a focus on SEO strategies that deliver measurable results.</p>
+                        </div>
+                    </div>
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Team Member">
+                        </div>
+                        <div class="member-info">
+                            <h3>Emma Rodriguez</h3>
+                            <p class="member-role">Project Manager</p>
+                            <p>Ensuring projects are delivered on time and exceed client expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process">
+            <div class="container">
+                <h2>Our Values</h2>
+                <div class="process-steps">
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>We stay at the forefront of technology to deliver cutting-edge solutions.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Partnership</h3>
+                        <p>We build lasting relationships based on trust and mutual success.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Results-Driven</h3>
+                        <p>We measure success by the impact we create for our clients.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Collaboration</h3>
+                        <p>We work closely with our clients throughout every project.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Services</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li>Services</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2>Comprehensive Digital Solutions</h2>
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Design & Development</h3>
+                        <p>Custom websites and web applications built with the latest technologies.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                        <p>Improve your search engine rankings and drive more organic traffic.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Branding & Identity</h3>
+                        <p>Create a strong brand identity that resonates with your target audience.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Social Media Marketing</h3>
+                        <p>Engage your audience and grow your presence across social platforms.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Solutions</h3>
+                        <p>Build online stores that convert visitors into loyal customers.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Integration</h3>
+                        <p>Migrate and optimize your business operations in the cloud.</p>
+                        <a href="#" class="service-link" data-page="services">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-detail">
+            <div class="container">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h2>Web Design & Development</h2>
+                        <p>Our web design and development services combine creative excellence with technical expertise to deliver websites that not only look stunning but also perform exceptionally. We create responsive, user-friendly websites that work seamlessly across all devices and platforms.</p>
+                        
+                        <h3>Our Approach</h3>
+                        <p>We follow a comprehensive process that begins with understanding your business goals and target audience. Our team then creates wireframes and prototypes before moving into the design and development phases. We use the latest technologies and frameworks to ensure your website is fast, secure, and scalable.</p>
+                        
+                        <h3>Technologies We Use</h3>
+                        <p>Our tech stack includes HTML5, CSS3, JavaScript, React, Vue.js, Node.js, PHP, WordPress, and many other modern technologies. We choose the right tools for each project to ensure optimal performance and maintainability.</p>
+                    </div>
+                    <div class="service-detail-sidebar">
+                        <div class="service-features">
+                            <h3>What's Included</h3>
+                            <ul>
+                                <li>Custom Website Design</li>
+                                <li>Responsive Development</li>
+                                <li>Content Management System</li>
+                                <li>SEO-Friendly Structure</li>
+                                <li>Performance Optimization</li>
+                                <li>Security Implementation</li>
+                                <li>Ongoing Support & Maintenance</li>
+                            </ul>
+                        </div>
+                        <div class="service-features">
+                            <h3>Why Choose Us</h3>
+                            <ul>
+                                <li>8+ Years Experience</li>
+                                <li>150+ Projects Completed</li>
+                                <li>Custom Solutions</li>
+                                <li>Timely Delivery</li>
+                                <li>Ongoing Support</li>
+                                <li>Competitive Pricing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="container">
+                <h2>Service Packages</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card fade-in">
+                        <h3>Starter</h3>
+                        <div class="price">$999<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li>5 Page Website</li>
+                            <li>Mobile Responsive</li>
+                            <li>Basic SEO Setup</li>
+                            <li>Contact Form</li>
+                            <li>1 Month Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-page="contact">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured fade-in">
+                        <h3>Professional</h3>
+                        <div class="price">$1999<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li>Up to 15 Pages</li>
+                            <li>Custom Design</li>
+                            <li>Advanced SEO</li>
+                            <li>E-commerce Functionality</li>
+                            <li>3 Months Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-page="contact">Get Started</a>
+                    </div>
+                    <div class="pricing-card fade-in">
+                        <h3>Enterprise</h3>
+                        <div class="price">$3999<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li>Unlimited Pages</li>
+                            <li>Premium Design</li>
+                            <li>Full SEO Package</li>
+                            <li>Advanced E-commerce</li>
+                            <li>6 Months Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" data-page="contact">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Projects Page -->
+    <div id="projects" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Projects</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li>Projects</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <div class="container">
+                <h2>Recent Work</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="E-commerce Website">
+                        <div class="portfolio-overlay">
+                            <h3>StyleHub E-commerce</h3>
+                            <p>Custom online store with integrated payment system</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Corporate Website">
+                        <div class="portfolio-overlay">
+                            <h3>FinCorp Website</h3>
+                            <p>Modern responsive design for a financial services company</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile App">
+                        <div class="portfolio-overlay">
+                            <h3>FoodieGo App</h3>
+                            <p>Cross-platform app for a food delivery service</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Brand Identity">
+                        <div class="portfolio-overlay">
+                            <h3>TechNova Branding</h3>
+                            <p>Complete rebranding for a tech startup</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dashboard">
+                        <div class="portfolio-overlay">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Custom analytics platform for data visualization</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile Banking">
+                        <div class="portfolio-overlay">
+                            <h3>SecureBank App</h3>
+                            <p>Mobile banking application with advanced security</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-detail">
+            <div class="container">
+                <div class="project-detail-content">
+                    <div class="project-header">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="StyleHub E-commerce">
+                        </div>
+                        <div class="project-info">
+                            <h2>StyleHub E-commerce Platform</h2>
+                            <p>StyleHub is a modern e-commerce platform specializing in fashion and accessories. We developed a complete online shopping experience with advanced features like personalized recommendations, seamless checkout, and inventory management.</p>
+                            
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Client</span>
+                                    <span class="meta-value">StyleHub</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Category</span>
+                                    <span class="meta-value">E-commerce</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Date</span>
+                                    <span class="meta-value">March 2023</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Duration</span>
+                                    <span class="meta-value">12 Weeks</span>
+                                </div>
+                            </div>
+                            
+                            <h3>Challenge</h3>
+                            <p>StyleHub needed a scalable e-commerce solution that could handle high traffic volumes during seasonal sales while providing a seamless user experience across all devices. The previous platform had performance issues and a high cart abandonment rate.</p>
+                            
+                            <h3>Solution</h3>
+                            <p>We developed a custom e-commerce platform using React for the frontend and Node.js for the backend. The solution included advanced features like AI-powered recommendations, one-click checkout, and real-time inventory management. We also implemented a responsive design that works perfectly on all screen sizes.</p>
+                            
+                            <a href="#" class="btn btn-primary" data-page="contact">Start Your Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item fade-in">
+                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="StyleHub Homepage">
+                            </div>
+                            <div class="gallery-item fade-in">
+                                <img src="https://images.unsplash.com/photo-1556742044-3f034d4fbbca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="StyleHub Product Page">
+                            </div>
+                            <div class="gallery-item fade-in">
+                                <img src="https://images.unsplash.com/photo-1556742044-3cbfa3ddfc76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="StyleHub Checkout">
+                            </div>
+                            <div class="gallery-item fade-in">
+                                <img src="https://images.unsplash.com/photo-1556742044-3cbfa3ddfc76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="StyleHub Mobile View">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Page -->
+    <div id="blog" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Blog</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="blog">
+            <div class="container">
+                <h2>Latest Insights</h2>
+                <div class="blog-grid">
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                                <span><i class="far fa-user"></i> John Doe</span>
+                            </div>
+                            <h3>10 Web Design Trends for 2023</h3>
+                            <p>Discover the latest web design trends that will dominate this year and how to implement them in your projects.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                                <span><i class="far fa-user"></i> Jane Smith</span>
+                            </div>
+                            <h3>How to Improve Your SEO in 5 Simple Steps</h3>
+                            <p>Learn actionable strategies to boost your search engine rankings and drive more organic traffic to your website.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> May 10, 2023</span>
+                                <span><i class="far fa-user"></i> Alex Johnson</span>
+                            </div>
+                            <h3>The Importance of Mobile-First Design</h3>
+                            <p>With mobile traffic surpassing desktop, learn why mobile-first design is crucial for your online success.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> April 22, 2023</span>
+                                <span><i class="far fa-user"></i> Michael Chen</span>
+                            </div>
+                            <h3>UX Design Principles for Better Conversion</h3>
+                            <p>Explore key UX design principles that can significantly improve your website's conversion rates.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> April 5, 2023</span>
+                                <span><i class="far fa-user"></i> Sarah Johnson</span>
+                            </div>
+                            <h3>Building Scalable Web Applications</h3>
+                            <p>Learn the best practices for developing web applications that can scale with your business growth.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blog Post">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> March 18, 2023</span>
+                                <span><i class="far fa-user"></i> David Wilson</span>
+                            </div>
+                            <h3>The Future of E-commerce Technology</h3>
+                            <p>Discover emerging technologies that are shaping the future of online shopping and digital commerce.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-detail">
+            <div class="container">
+                <div class="blog-detail-content">
+                    <div class="blog-article">
+                        <div class="article-header">
+                            <h1>10 Web Design Trends for 2023</h1>
+                            <div class="article-meta">
+                                <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                                <span><i class="far fa-user"></i> John Doe</span>
+                                <span><i class="far fa-folder"></i> Web Design</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Web Design Trends">
+                        </div>
+                        
+                        <div class="article-content">
+                            <p>As we move further into 2023, web design continues to evolve with new trends and technologies shaping the digital landscape. Staying updated with these trends is crucial for creating modern, engaging websites that capture user attention and drive conversions.</p>
+                            
+                            <h3>1. Dark Mode Design</h3>
+                            <p>Dark mode has transitioned from a novelty to an expected feature. With benefits like reduced eye strain and battery savings on OLED screens, more websites are offering dark mode options. Implementing a well-designed dark theme can enhance user experience and give your site a modern, sophisticated look.</p>
+                            
+                            <h3>2. Immersive 3D Elements</h3>
+                            <p>Advancements in web technologies like WebGL have made it easier to incorporate 3D elements without sacrificing performance. From product visualizations to interactive backgrounds, 3D elements can create memorable experiences that engage users and differentiate your website.</p>
+                            
+                            <h3>3. Neumorphism</h3>
+                            <p>This design trend combines skeuomorphism and flat design to create soft, extruded shapes that appear to push through the screen. While it requires careful implementation to maintain accessibility, neumorphism can create visually appealing interfaces with a tactile quality.</p>
+                            
+                            <h3>4. Voice User Interface (VUI)</h3>
+                            <p>With the growing prevalence of voice assistants, incorporating voice interactions into websites is becoming more common. VUI can improve accessibility and provide hands-free navigation, especially for mobile users.</p>
+                            
+                            <h3>5. AI-Powered Personalization</h3>
+                            <p>Artificial intelligence is enabling hyper-personalized web experiences. From dynamic content to personalized product recommendations, AI can help create unique experiences for each visitor based on their behavior, preferences, and context.</p>
+                            
+                            <p>These trends represent the ongoing evolution of web design toward more immersive, personalized, and accessible experiences. By strategically incorporating these elements into your web projects, you can create cutting-edge websites that stand out in today's competitive digital landscape.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-sidebar">
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">About Author</h3>
+                            <div class="author-info">
+                                <div class="author-image">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="John Doe">
+                                </div>
+                                <h4>John Doe</h4>
+                                <p>Senior Web Designer at WebWise Solutions with 8+ years of experience in creating engaging digital experiences.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Recent Posts</h3>
+                            <ul class="recent-posts">
+                                <li class="recent-post">
+                                    <div class="recent-post-image">
+                                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Recent Post">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h4><a href="#">How to Improve Your SEO in 5 Simple Steps</a></h4>
+                                        <span class="recent-post-date">May 28, 2023</span>
+                                    </div>
+                                </li>
+                                <li class="recent-post">
+                                    <div class="recent-post-image">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Recent Post">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h4><a href="#">The Importance of Mobile-First Design</a></h4>
+                                        <span class="recent-post-date">May 10, 2023</span>
+                                    </div>
+                                </li>
+                                <li class="recent-post">
+                                    <div class="recent-post-image">
+                                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Recent Post">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h4><a href="#">UX Design Principles for Better Conversion</a></h4>
+                                        <span class="recent-post-date">April 22, 2023</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Categories</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Web Design (12)</a></li>
+                                <li><a href="#">Development (8)</a></li>
+                                <li><a href="#">SEO (6)</a></li>
+                                <li><a href="#">Digital Marketing (9)</a></li>
+                                <li><a href="#">E-commerce (5)</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Popular Tags</h3>
+                            <div class="tags">
+                                <a href="#" class="tag">Web Design</a>
+                                <a href="#" class="tag">UI/UX</a>
+                                <a href="#" class="tag">Development</a>
+                                <a href="#" class="tag">SEO</a>
+                                <a href="#" class="tag">Responsive</a>
+                                <a href="#" class="tag">JavaScript</a>
+                                <a href="#" class="tag">E-commerce</a>
+                                <a href="#" class="tag">WordPress</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h2>Let's Build Something Exceptional Together!</h2>
+                        <p>Ready to take your digital presence to the next level? Get in touch with our team to discuss your project.</p>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                            <p><i class="fas fa-envelope"></i> hello@webwisesolutions.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 123 Digital Street, Tech City</p>
+                        </div>
+                        
+                        <h3>Our Office Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday: 10:00 AM - 4:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactFormPage">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interested In</label>
+                                <select id="service" class="form-control">
+                                    <option value="">Select a service</option>
+                                    <option value="web-design">Web Design & Development</option>
+                                    <option value="seo">SEO Optimization</option>
+                                    <option value="branding">Branding & Identity</option>
+                                    <option value="social-media">Social Media Marketing</option>
+                                    <option value="ecommerce">E-commerce Solutions</option>
+                                    <option value="cloud">Cloud Integration</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2>Find Us</h2>
+                <div class="map-placeholder">
+                    <div style="width: 100%; height: 400px; background: #f0f0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <p>Interactive Map Would Appear Here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WebWise Solutions</h3>
+                    <p>Transforming businesses through innovative digital solutions. We combine creativity with technical expertise to deliver exceptional results.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About Us</a></li>
+                        <li><a href="#" data-page="services">Services</a></li>
+                        <li><a href="#" data-page="projects">Projects</a></li>
+                        <li><a href="#" data-page="blog">Blog</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="services">Web Design</a></li>
+                        <li><a href="#" data-page="services">Web Development</a></li>
+                        <li><a href="#" data-page="services">SEO Optimization</a></li>
+                        <li><a href="#" data-page="services">Branding</a></li>
+                        <li><a href="#" data-page="services">E-commerce</a></li>
+                        <li><a href="#" data-page="services">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Digital Street, Tech City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@webwisesolutions.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 WebWise Solutions. All Rights Reserved. | Founder: Alexander N. Kathanzu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h3>Chat with Us</h3>
+            <button class="close-chat" id="closeChat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <div class="message-bubble">
+                    Hello! How can we help you today?
+                </div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+            <button class="send-btn" id="sendMessage">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Page Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all page links
+            const pageLinks = document.querySelectorAll('[data-page]');
+            
+            // Add click event to all page links
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Hide all pages
+                    document.querySelectorAll('.page').forEach(page => {
+                        page.classList.remove('active');
+                    });
+                    
+                    // Show target page
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Close mobile nav if open
+                    mobileNav.classList.remove('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // Set home page as active by default
+            document.getElementById('home').classList.add('active');
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Testimonial Slider
+        const track = document.getElementById('testimonialTrack');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                currentSlide = parseInt(this.getAttribute('data-slide'));
+                updateSlider();
+            });
+        });
+        
+        // Auto-slide testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            updateSlider();
+        }, 5000);
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        const contactFormPage = document.getElementById('contactFormPage');
+        if (contactFormPage) {
+            contactFormPage.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        // Mobile Navigation
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMobileNav = document.getElementById('closeMobileNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+        });
+        
+        closeMobileNav.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+        });
+
+        // Chat Widget
+        const chatWidget = document.getElementById('chatWidget');
+        const chatBox = document.getElementById('chatBox');
+        const closeChat = document.getElementById('closeChat');
+        const sendMessage = document.getElementById('sendMessage');
+        const chatInput = document.getElementById('chatInput');
+        const chatBody = document.getElementById('chatBody');
+        
+        chatWidget.addEventListener('click', function() {
+            chatBox.classList.add('active');
+        });
+        
+        closeChat.addEventListener('click', function() {
+            chatBox.classList.remove('active');
+        });
+        
+        sendMessage.addEventListener('click', function() {
+            sendChatMessage();
+        });
+        
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendChatMessage();
+            }
+        });
+        
+        function sendChatMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('chat-message', 'user');
+                userMessage.innerHTML = `<div class="message-bubble">${message}</div>`;
+                chatBody.appendChild(userMessage);
+                
+                // Clear input
+                chatInput.value = '';
+                
+                // Scroll to bottom
+                chatBody.scrollTop = chatBody.scrollHeight;
+                
+                // Simulate bot response after a delay
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.classList.add('chat-message', 'bot');
+                    
+                    let response = "Thanks for your message! Our team will get back to you soon.";
+                    if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+                        response = "Our pricing starts at $499 for basic websites. Would you like to see our pricing plans?";
+                    } else if (message.toLowerCase().includes('service') || message.toLowerCase().includes('what do you do')) {
+                        response = "We offer web design, development, SEO, branding, and digital marketing services. Which one are you interested in?";
+                    } else if (message.toLowerCase().includes('contact') || message.toLowerCase().includes('phone') || message.toLowerCase().includes('email')) {
+                        response = "You can reach us at hello@webwisesolutions.com or +1 (555) 123-4567. Our office hours are Mon-Fri 9am-6pm.";
+                    }
+                    
+                    botMessage.innerHTML = `<div class="message-bubble">${response}</div>`;
+                    chatBody.appendChild(botMessage);
+                    
+                    // Scroll to bottom
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        // Scroll Animations
+        function checkScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+    </script>
+</body>
+</html>
